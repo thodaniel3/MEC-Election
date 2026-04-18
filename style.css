@@ -120,8 +120,155 @@ h2 {
 .candidates {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
   gap: 15px;
+
 }
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* BODY */
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* HEADER */
+.main-header {
+  background: #0a2a66;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.main-header h1 {
+  font-size: 24px;
+}
+
+.main-header p {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* CONTAINER */
+.containervv {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+/* SECTION HEADER */
+.vote-headers {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.vote-headers h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.vote-headers p {
+  color: #777;
+}
+
+/* POSITION CARD */
+.position-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* POSITION TITLE */
+.position-card h3 {
+  margin-bottom: 15px;
+  color: #0a2a66;
+}
+
+/* CANDIDATES GRID */
+.candidates {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* CANDIDATE CARD */
+.candidate {
+  background: #fafafa;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 2px solid transparent;
+}
+
+/* HOVER EFFECT */
+.candidate:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* SELECTED STATE */
+.candidate.selected {
+  border: 2px solid #0a2a66;
+  background: #eaf0ff;
+}
+
+/* IMAGE FIX (IMPORTANT) */
+.candidate img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: top; /* 🔥 ensures faces show */
+  border-radius: 12px;
+}
+
+/* NAME */
+.candidate p {
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* SUBMIT BUTTON */
+.submit-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.submit-section button {
+  background: #0a2a66;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-section button:hover {
+  background: #133a8a;
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+  background: #0a2a66;
+  color: white;
+  font-size: 14px;
+}
+
 
 .candidate {
   border: 1px solid #ddd;
