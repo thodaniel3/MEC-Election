@@ -284,7 +284,7 @@ body {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ddd;
-  object-position: 50% 20%;
+
 }
 
 
@@ -292,7 +292,7 @@ body {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  object-position: 50% 20%;
+
 }
 
 button {
