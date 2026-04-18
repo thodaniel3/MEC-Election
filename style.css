@@ -699,6 +699,70 @@ body {
 }
 
 
+.containerhh {
+  width: 80%;
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+
+
+
+
+#resulttts {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.result-card {
+  background: #f9fbff;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #0a2a66;
+  transition: 0.3s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.result-card h3 {
+  color: #0a2a66;
+  margin-bottom: 10px;
+}
+
+
+
+.result-card p {
+  font-size: 15px;
+  margin: 6px 0;
+  padding: 8px;
+  background: #eef2ff;
+  border-radius: 6px;
+}
+
+.result-card p strong {
+  color: #0a2a66;
+}
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    FORM CONTAINER
 ========================= */

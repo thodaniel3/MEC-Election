@@ -2,12 +2,12 @@ import { supabase } from './supabase.js'
 
 const ADMIN_EMAIL = "admin@2026.com"
 
-// 🔐 CHECK ADMIN
+// 🔐 CHECK ADMIN ACCESS
 async function checkAdmin() {
-  const { data } = await supabase.auth.getUser()
+  const { data, error } = await supabase.auth.getUser()
 
-  if (!data.user || data.user.email !== ADMIN_EMAIL) {
-    alert("Unauthorized")
+  if (error || !data.user || data.user.email !== ADMIN_EMAIL) {
+    alert("Unauthorized access")
     window.location.href = "login.html"
     return
   }
@@ -20,20 +20,34 @@ checkAdmin()
 // 📊 LOAD RESULTS
 async function loadResults() {
 
-  const { data: positions } = await supabase.from('positions').select('*')
+  const container = document.getElementById("resulttts")
+  container.innerHTML = "<p>Loading results...</p>"
 
-  const container = document.getElementById("results")
+  // Get positions
+  const { data: positions, error: posError } = await supabase
+    .from('positions')
+    .select('*')
+
+  if (posError) {
+    container.innerHTML = "<p>Error loading positions</p>"
+    return
+  }
+
   container.innerHTML = ""
 
   for (let pos of positions) {
 
-    const { data: candidates } = await supabase
+    // Get candidates for this position
+    const { data: candidates, error: candError } = await supabase
       .from('candidates')
       .select('*')
       .eq('position_id', pos.id)
 
-    let html = `<div class="position"><h3>${pos.title}</h3>`
+    if (candError) continue
 
+    let results = []
+
+    // Get vote count for each candidate
     for (let c of candidates) {
 
       const { count } = await supabase
@@ -41,10 +55,34 @@ async function loadResults() {
         .select('*', { count: 'exact', head: true })
         .eq('candidate_id', c.id)
 
-      html += `
-        <p>${c.name} — ${count || 0} votes</p>
-      `
+      results.push({
+        name: c.name,
+        votes: count || 0
+      })
     }
+
+    // 🔥 SORT BY HIGHEST VOTES
+    results.sort((a, b) => b.votes - a.votes)
+
+    // 🥇 Get highest vote (for winner highlight)
+    const maxVotes = results.length > 0 ? results[0].votes : 0
+
+    // Build UI
+    let html = `
+      <div class="result-card">
+        <h3>${pos.title}</h3>
+    `
+
+    results.forEach(r => {
+
+      const isWinner = r.votes === maxVotes && maxVotes > 0
+
+      html += `
+        <p ${isWinner ? 'style="background:#d4edda; font-weight:bold;"' : ''}>
+          ${isWinner ? '🥇 ' : ''}${r.name} — ${r.votes} votes
+        </p>
+      `
+    })
 
     html += `</div>`
 
