@@ -13,7 +13,7 @@ form.addEventListener("submit", async (e) => {
   console.log("Sending reset for:", email);
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: "https://futomsa-election2026.vercel.app/update-password.html"
+    redirectTo: "https://futomsa-election2026.vercel.app/passwordreset.html"
   });
 
   if (error) {
