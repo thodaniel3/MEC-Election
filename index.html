@@ -42,19 +42,40 @@
   </a>
 </div>
 
+ 
 <div class="containerz">
-  <h2>Create Account</h2>
+  <h2>Create Account   
+<div class="warning">
+  <span></span>
+  <span> For inquiries or for support, contact site admin at thodaniel@gmail.com </span>
+</div>
+        </h2>
 
-  <!-- ✅ FIXED ID -->
-  <form id="registerForm">
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="text" id="matric" placeholder="Matric Number" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="text" id="level" placeholder="Level" required>
-    <input type="password" id="password" placeholder="Password" required>
+  <!-- ✅ FIXED ID --><form id="registerForm">
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="text" id="matric" placeholder="Matric Number" required>
+  <input type="email" id="email" placeholder="Email" required>
 
-    <button type="submit">Register</button>
-  </form>
+  <!-- ✅ DROPDOWN LEVEL -->
+  <select id="level" required>
+    <option value="" disabled selected>Select Level</option>
+    <option value="100">100 Level</option>
+    <option value="200">200 Level</option>
+    <option value="300">300 Level</option>
+    <option value="400A">400 Level A</option>
+    <option value="400B">400 Level B</option>
+  </select>
+
+  <input type="password" id="password" placeholder="Password" required>
+
+  <button type="submit">Register</button>
+</form>
+</div>
+
+<div class="warning">
+  <span>💡</span>
+  <span>Hint: Register and confirm your email before logging in.  </span>
+</div>
 </div>
 <div class="admin-sectionp">
   <a href="passwordreset.html" class="admin-btn">

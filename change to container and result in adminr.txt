@@ -1,0 +1,1 @@
+change to container and result in adminresult .html, and use adminresult.js as it js

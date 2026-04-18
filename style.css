@@ -753,13 +753,92 @@ body {
   color: #0a2a66;
 }
 
+.warning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+.warning span:last-child {
+  font-size: 15px;
+  font-weight: 500;
+  color: #00050a;              /* clean professional blue */
+  line-height: 1.5;
+  letter-spacing: 0.3px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+
+
+
+
+/* Support text styling + animation */
+#SiteSupport {
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 400;
+  color:;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 12px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+
+  /* animation */
+  animation: slideLeftToRight 8s linear infinite;
+}
+
+/* Smooth left → right movement */
+@keyframes slideLeftToRight {
+  0% {
+    transform: translateX(-120%);
+    opacity: 0;
+  }
+  
+  }
+}
 
 
 
 
 
 
+/* Style ALL inputs + dropdown */
+input,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s ease;
+}
 
+/* Focus effect */
+input:focus,
+select:focus {
+  border-color: #4da3ff;
+  box-shadow: 0 0 8px rgba(77, 163, 255, 0.4);
+}
+
+/* Dropdown specific arrow styling */
+select {
+  appearance: none;
+  cursor: pointer;
+}
+
+/* Make dropdown options readable */
+select option {
+  color: #000;
+}
 
 
 
