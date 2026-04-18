@@ -698,6 +698,181 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+
+
+/* =========================
+   BODY
+========================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f4f6fb;
+}
+
+/* =========================
+   HEADER
+========================= */
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0a2a66;
+  color: white;
+}
+
+.top-header img {
+  height: 60px;
+}
+
+.header-titless {
+  text-align: center;
+  flex: 1;
+}
+
+.sub-title {
+  font-size: 13px;
+}
+
+.tagline {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* =========================
+   MAIN CONTAINER (80%)
+========================= */
+.containero {
+  width: 80%;                 /* 🔥 MAIN WIDTH */
+  max-width: 1300px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+
+  animation: fadeIn 0.8s ease;
+}
+
+/* TITLE */
+.containero h2 {
+  text-align: center;
+  color: #0a2a66;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   RESULTS BOX (70%)
+========================= */
+#resultts {
+  width: 70%;                 /* 🔥 RESULT WIDTH */
+  margin: 0 auto;             /* center it */
+  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+.result-card {
+  background: #fafafa;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 6px solid #0a2a66;
+  transition: 0.3s ease;
+
+  animation: slideUp 0.6s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* POSITION TITLE */
+.result-card h3 {
+  margin-bottom: 10px;
+  color: #0a2a66;
+}
+
+/* TEXT */
+.result-card p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+/* =========================
+   ADMIN BUTTON
+========================= */
+.admin-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.admin-btn {
+  display: inline-block;
+  background: #0a2a66;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 10px;
+  transition: 0.3s;
+}
+
+.admin-btn:hover {
+  background: #133a8a;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .containero {
+    width: 95%;
+    padding: 20px;
+  }
+
+  #resultts {
+    width: 100%;
+  }
+
+  .top-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
+
+
+
 /* =========================
    FORM CONTAINER
 ========================= */
