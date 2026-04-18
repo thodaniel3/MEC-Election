@@ -855,12 +855,12 @@ body {
    RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
-  .containero {
+  .container {
     width: 95%;
     padding: 20px;
   }
 
-  #resultts {
+  #results {
     width: 100%;
   }
 
