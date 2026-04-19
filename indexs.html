@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>Register</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <header class="top-header">
@@ -34,57 +32,34 @@
 
 </header>
 
-<!-- ADMIN LINKS -->
 <div class="admin-sectionp">
-  <a href="admin-login.html" class="admin-btn">🔐 Admin - Login</a>
-  <a href="login.html" class="admin-btnp">🔐 Students Login</a>
+  <a href="admin-login.html" class="admin-btn">
+    🔐 Admin - Login
+  </a>
+
+  <a href="login.html" class="admin-btnp">
+    🔐 Students Login
+  </a>
 </div>
 
-<!-- REGISTER CONTAINER -->
-<div class="containerzz">
-
+<div class="containerz">
   <h2>Create Account</h2>
 
-  <div class="warningf">
-    <span>📩</span>
-    <span>For inquiries or support, contact: thodaniel@gmail.com</span>
-  </div>
-
-  <form id="registerFormg">
-
+  <!-- ✅ FIXED ID -->
+  <form id="registerForm">
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="text" id="matric" placeholder="Matric Number" required>
     <input type="email" id="email" placeholder="Email" required>
-
-    <!-- LEVEL DROPDOWN -->
-    <select id="level" required>
-      <option value="" disabled selected>Select Level</option>
-      <option value="100">100 Level</option>
-      <option value="200">200 Level</option>
-      <option value="300">300 Level</option>
-      <option value="400A">400 Level A</option>
-      <option value="400B">400 Level B</option>
-    </select>
-
+    <input type="text" id="level" placeholder="Level" required>
     <input type="password" id="password" placeholder="Password" required>
 
     <button type="submit">Register</button>
-
   </form>
-
-  <div class="warning">
-    <span>💡</span>
-    <span>Hint: Register and confirm your email before logging in.</span>
-  </div>
-
-  <div class="admin-sectionp" style="margin-top: 15px;">
-    <a href="passwordreset.html" class="admin-btn">🔐 Password Reset</a>
-  </div>
-
 </div>
-
-<!-- SCRIPT (MUST BE OUTSIDE ALL DIVS) -->
+<div class="admin-sectionp">
+  <a href="passwordreset.html" class="admin-btn">
+    🔐 Password reset
+  </a>
 <script type="module" src="register.js"></script>
-
 </body>
 </html>
