@@ -1,27 +1,44 @@
 import { supabase } from './supabase.js';
 
 const cardsContainer = document.getElementById('cards');
+const totalVotesEl = document.getElementById('totalVotes');
 const refreshBtn = document.getElementById('refreshBtn');
 
-// FIXED LEVEL STRUCTURE
-const levels = [
-  "100",
-  "200",
-  "300",
-  "400A",
-  "400B"
-];
+// Fixed levels
+const levels = ["100", "200", "300", "400A", "400B"];
+
+// Check admin login
+async function checkAdmin() {
+  const { data: { user } } = await supabase.auth.getUser();
+
+  if (!user) {
+    alert("You must login as admin");
+    window.location.href = "admin-login.html";
+    return null;
+  }
+
+  return user;
+}
 
 async function fetchVoteCounts() {
-  cardsContainer.innerHTML = "<p>Loading data...</p>";
+  cardsContainer.innerHTML = "<p>Loading...</p>";
 
+  const user = await checkAdmin();
+  if (!user) return;
+
+  // ✅ CORRECT JOIN
   const { data, error } = await supabase
     .from('votes')
-    .select('level');
+    .select(`
+      user_id,
+      students!votes_user_id_fkey (
+        level
+      )
+    `);
 
   if (error) {
     console.error(error);
-    cardsContainer.innerHTML = "<p>Error loading data</p>";
+    cardsContainer.innerHTML = `<p style="color:red;">${error.message}</p>`;
     return;
   }
 
@@ -34,15 +51,18 @@ async function fetchVoteCounts() {
     "400B": 0
   };
 
-  // Count votes
-  data.forEach(vote => {
-    const level = vote.level;
+  let total = 0;
 
-    if (counts.hasOwnProperty(level)) {
+  data.forEach(vote => {
+    const level = vote.students?.level;
+
+    if (level && counts.hasOwnProperty(level)) {
       counts[level]++;
+      total++;
     }
   });
 
+  totalVotesEl.textContent = total;
   renderCards(counts);
 }
 
@@ -62,7 +82,6 @@ function renderCards(counts) {
   });
 }
 
-// Format display text
 function formatLevel(level) {
   if (level === "400A") return "400 Level A";
   if (level === "400B") return "400 Level B";
@@ -72,5 +91,5 @@ function formatLevel(level) {
 // Refresh button
 refreshBtn.addEventListener('click', fetchVoteCounts);
 
-// Load on page start
+// Load page
 fetchVoteCounts();

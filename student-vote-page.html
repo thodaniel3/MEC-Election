@@ -3,18 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Voting Dashboard</title>
+  <title>Admin Voting Dashboard</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <div class="container">
-    <h1>Student Voting Dashboard</h1>
-    <p class="subtitle">Live voting statistics by level</p>
+    <header>
+      <h1>📊 Voting Dashboard</h1>
+      <p>Admin view – Student votes by level</p>
+    </header>
 
-    <div class="cards" id="cards">
-      <!-- Cards will be inserted here -->
-    </div>
+    <section class="summary">
+      <div class="total-card">
+        <h2>Total Votes</h2>
+        <p id="totalVotes">0</p>
+      </div>
+    </section>
+
+    <section class="cards" id="cards"></section>
 
     <button id="refreshBtn">Refresh Data</button>
   </div>
