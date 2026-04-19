@@ -770,7 +770,110 @@ body {
   padding-top: 0px;
 }
 
+/* ================================
+   FORM CONTAINER (CARD STYLE)
+================================ */
+.containerzz {
+  width: 100%;
+  max-width: 620px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+/* FORM TITLE */
+.containerzz h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #071802;
+}
+
+/* ================================
+   INPUT FIELDS
+================================ */
+.containerzz input,
+.containerzz select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.25s ease;
+  background: #f9fafb;
+  color: #051a07;
+}
+
+/* INPUT PLACEHOLDER */
+.containerzz input::placeholder {
+  color: #9ca3af;
+}
+
+/* INPUT FOCUS EFFECT */
+.containerzz input:focus,
+.containerzz select:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* ================================
+   BUTTON STYLE
+================================ */
+.containerzz button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #010a01, #010c03);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* BUTTON HOVER */
+.containerzz button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.3);
+}
+
+/* BUTTON ACTIVE */
+.containerzz button:active {
+  transform: scale(0.98);
+}
+
+/* ================================
+   WARNING TEXT BOXES
+================================ */
+.warningf,
+.warning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  background: #fefce8;
+  border-left: 4px solid #facc15;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #92400e;
+}
+
+/* ================================
+   DROPDOWN OPTIONS STYLE
+================================ */
+.containerzz select option {
+  background: #ffffff;
+  color: #111827;
+}
 
 
 
